@@ -1,0 +1,158 @@
+.about__container {
+  background: var(--grey);
+  border-radius: .3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+
+  .about__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+
+    .about___info__h3 {
+      font-size: 2em;
+
+      .about__info__h3__span {
+        color: var(--dark-orange);
+      }
+    }
+
+    .about__info__p {
+      font-size: 1.1em;
+
+      .about__info__span {
+        color: var(--dark-orange);
+      }
+    }
+  }
+
+  .about__skills {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    .about__skills__h3 {
+      font-size: 2em;
+      color: var(--dark-orange);
+    }
+
+    .about__skills__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+
+      .about__skill {
+        font-size: 2rem;
+        transition: all .2s linear;
+
+        &:hover {
+          transform: scale(1.2);
+          transition: all .2s linear;
+        }
+      }
+
+      .skill-html:hover {
+        color: var(--html-color);
+      }
+
+      .skill-css:hover {
+        color: var(--css-color);
+      }
+
+      .skill-js:hover {
+        color: var(--js-color);
+      }
+
+      .skill-ts:hover {
+        color: var(--ts-color);
+      }
+
+      .skill-nodejs:hover {
+        color: var(--nodejs-color);
+      }
+
+      .skill-react:hover {
+        color: var(--react-color);
+      }
+
+      .skill-redux:hover {
+        color: var(--redux-color);
+      }
+
+      .skill-git:hover {
+        color: var(--git-color);
+      }
+
+      .skill-tailwindcss:hover {
+        color: var(--tailwindcss-color);
+      }
+
+      .skill-scss:hover {
+        color: var(--scss-color);
+      }
+    }
+  }
+
+  .about__buttons__container {
+    display: flex;
+    gap: .3rem;
+
+    .about__contact__button {
+      cursor: pointer;
+      background: var(--black);
+      border: .15rem solid transparent;
+      border-radius: .3rem;
+      padding: .5rem;
+      transition: .2s;
+
+      &:hover {
+        border-color: var(--dark-orange);
+        transition: .2s;
+      }
+
+      .about__contact__a {
+        font-size: 1.2em;
+      }
+    }
+
+    .about__button__linkedIn:hover {
+      border-radius: 50% 0 0 50%;
+    }
+
+    .about__button__gitHub:hover {
+      border-radius: 0 50% 50% 0;
+    }
+
+    .about__button {
+      cursor: pointer;
+      background: var(--black);
+      border: .15rem solid transparent;
+      border-radius: .3rem;
+      padding: .5rem 1.5rem;
+      transition: .2s;
+
+      &:hover {
+        border-color: var(--dark-orange);
+        transition: .2s;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about__container {}
+}
+
+@media (min-width: 1024px) {
+  .about__container {}
+}
+
+@media (min-width: 1440px) {
+  .about__container {}
+}
