@@ -1,0 +1,14 @@
+@import 'variables';
+
+.Projects__container {
+  .Projects__button {
+    cursor: pointer;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+    color: $black;
+    background: $dark-orange;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+  }
+}

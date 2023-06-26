@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { TfiHtml5, TfiCss3 } from "react-icons/tfi";
-import { FaArrowRight, FaSass, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { FaSass, FaNodeJs, FaGitAlt } from "react-icons/fa";
 import {
   SiJavascript,
   SiTypescript,
   SiReact,
   SiTailwindcss,
   SiRedux,
+  SiFirebase,
 } from "react-icons/si";
 import "../styles/About.scss";
 
@@ -44,6 +45,9 @@ export const About = () => {
           </div>
           <div className="about__skill skill-nodejs">
             <FaNodeJs />
+          </div>
+          <div className="about__skill skill-firebase">
+            <SiFirebase />
           </div>
           <div className="about__skill skill-react">
             <SiReact />

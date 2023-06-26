@@ -1,0 +1,192 @@
+@import 'variables';
+
+.ProjectsList__container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .ProjectsList__h1 {
+    font-size: 3em;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .ProjectsList__container__cards {
+    text-align: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    .ProjectsList__card:nth-of-type(1),
+    .ProjectsList__card:nth-of-type(2) {
+      .ProjectList__container__technologies {
+        background: $black;
+        border-radius: $border-radius;
+        padding: .8rem;
+      }
+    }
+
+    .ProjectsList__card {
+      min-width: 18rem;
+      background: $grey;
+      border-radius: $border-radius;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      gap: 3rem;
+
+      .ProjectsList__card__img {
+        max-width: 25rem;
+        border: .2rem solid $black;
+        border-radius: $border-radius;
+      }
+
+      .ProjectList__info__container {
+        .ProjectsList__card__info__h3 {
+          color: $dark-orange;
+          font-size: 1.8em;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .ProjectList__technologies {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .ProjectList__technologies__h4,
+        .ProjectList__technology__h4 {
+          font-size: 1.2em;
+        }
+
+        .ProjectList__container__technologies {
+          display: flex;
+          justify-content: space-evenly;
+          gap: 2rem;
+
+          .ProjectList__container__technologies__span {
+            font-size: 1.8em;
+            transition: $transition-linear;
+
+            &:hover {
+              transform: scale($scale);
+              transition: $transition-linear;
+            }
+          }
+
+          .skill-react:hover {
+            color: $react-color;
+          }
+
+          .skill-ts:hover {
+            color: $ts-color;
+          }
+
+          .skill-redux:hover {
+            color: $redux-color;
+          }
+
+          .skill-scss:hover {
+            color: $scss-color;
+          }
+
+          .skill-firebase:hover {
+            color: $firebase-color;
+          }
+
+          .skill-nodejs:hover {
+            color: $nodejs-color;
+          }
+
+          .skill-express:hover {
+            color: $express-color;
+          }
+
+          .skill-prisma:hover {
+            color: $prisma-color;
+          }
+
+          .skill-mySql:hover {
+            color: $mySql-color;
+          }
+        }
+
+        .ProjectList__technology {
+          background: $black;
+          padding: .8rem;
+          border-radius: $border-radius;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .ProjectList__container__technology {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
+
+      .ProjectList__links {
+        background: $black;
+        padding: .7rem 1.5rem;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        .ProjectList__link {
+          font-size: 1.5em;
+          transition: $transition-linear;
+
+          &:hover {
+            transition: $transition-linear;
+            transform: scale($scale);
+          }
+        }
+
+        .ProjectList__container__links {
+          display: flex;
+          gap: 1rem;
+
+          .ProjectList__link-frontend,
+          .ProjectList__link-backend {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .7em;
+            transition: $transition-linear;
+
+            &:hover {
+              transition: $transition-linear;
+              transform: scale($scale);
+            }
+
+            .ProjectList__link__span-frontend,
+            .ProjectList__link__span-backend {
+              font-size: 2em;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1440px) {
+      padding: 0 2rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

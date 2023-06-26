@@ -1,5 +1,7 @@
+@import 'variables';
+
 .about__container {
-  background: var(--grey);
+  background: $grey;
   border-radius: .3rem;
   padding: 1rem;
   display: flex;
@@ -18,7 +20,7 @@
       font-size: 2em;
 
       .about__info__h3__span {
-        color: var(--dark-orange);
+        color: $dark-orange;
       }
     }
 
@@ -26,7 +28,7 @@
       font-size: 1.1em;
 
       .about__info__span {
-        color: var(--dark-orange);
+        color: $dark-orange;
       }
     }
   }
@@ -38,7 +40,7 @@
 
     .about__skills__h3 {
       font-size: 2em;
-      color: var(--dark-orange);
+      color: $dark-orange;
     }
 
     .about__skills__container {
@@ -49,52 +51,56 @@
 
       .about__skill {
         font-size: 2rem;
-        transition: all .2s linear;
+        transition: $transition-ease-in-out;
 
         &:hover {
-          transform: scale(1.2);
-          transition: all .2s linear;
+          transform: scale($scale);
+          transition: $transition-linear;
         }
       }
 
       .skill-html:hover {
-        color: var(--html-color);
+        color: $html-color;
       }
 
       .skill-css:hover {
-        color: var(--css-color);
+        color: $css-color;
       }
 
       .skill-js:hover {
-        color: var(--js-color);
+        color: $js-color;
       }
 
       .skill-ts:hover {
-        color: var(--ts-color);
+        color: $ts-color;
       }
 
       .skill-nodejs:hover {
-        color: var(--nodejs-color);
+        color: $nodejs-color;
+      }
+
+      .skill-firebase:hover {
+        color: $firebase-color;
       }
 
       .skill-react:hover {
-        color: var(--react-color);
+        color: $react-color;
       }
 
       .skill-redux:hover {
-        color: var(--redux-color);
+        color: $redux-color;
       }
 
       .skill-git:hover {
-        color: var(--git-color);
+        color: $git-color;
       }
 
       .skill-tailwindcss:hover {
-        color: var(--tailwindcss-color);
+        color: $tailwindcss-color;
       }
 
       .skill-scss:hover {
-        color: var(--scss-color);
+        color: $scss-color;
       }
     }
   }
@@ -105,15 +111,15 @@
 
     .about__contact__button {
       cursor: pointer;
-      background: var(--black);
+      background: $black;
       border: .15rem solid transparent;
       border-radius: .3rem;
       padding: .5rem;
-      transition: .2s;
+      transition: $transition-linear;
 
       &:hover {
-        border-color: var(--dark-orange);
-        transition: .2s;
+        border-color: $dark-orange;
+        transition: $transition-linear;
       }
 
       .about__contact__a {
@@ -131,14 +137,14 @@
 
     .about__button {
       cursor: pointer;
-      background: var(--black);
+      background: $black;
       border: .15rem solid transparent;
       border-radius: .3rem;
       padding: .5rem 1.5rem;
       transition: .2s;
 
       &:hover {
-        border-color: var(--dark-orange);
+        border-color: $dark-orange;
         transition: .2s;
       }
     }
@@ -146,13 +152,69 @@
 }
 
 @media (min-width: 768px) {
-  .about__container {}
+  .about__container {
+    max-width: 38rem;
+
+    .about__skills {
+      .about__skills__container {
+        .about__skill {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) {
-  .about__container {}
+  .about__container {
+    max-width: 42rem;
+
+    .about__info {
+      .about___info__h3 {
+        font-size: 3em;
+      }
+    }
+
+    .about__skills {
+      .about__skills__h3 {
+        font-size: 3em;
+      }
+
+      .about__skills__container {
+        .about__skill {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1440px) {
-  .about__container {}
+  .about__container {
+    max-width: 42rem;
+
+    .about__info {
+      .about___info__h3 {
+        font-size: 4em;
+      }
+
+      .about__info__p {
+        font-size: 1.3em;
+      }
+    }
+
+    .about__skills {
+      .about__skills__h3 {
+        font-size: 4em;
+      }
+
+      .about__skills__container {
+        padding: 1rem 4rem;
+
+        .about__skill {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
 }

@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Righteous&display=swap');
-
-:root {
-  /* Colors */
-  --grey: #101010;
-  --black: #000000;
-  --white: #EEEEEE;
-  --dark-orange: #CF0A0A;
-  --light-orange: #DC5F00;
-  --html-color: #E34F26;
-  --css-color: #1572B6;
-  --js-color: #F7DF1E;
-  --ts-color: #007ACC;
-  --nodejs-color: #3C873A;
-  --react-color: #61DAFB;
-  --redux-color: #1c2c5b;
-  --git-color: #F05032;
-  --tailwindcss-color: #06B6D4;
-  --scss-color: #CC6699;
-  /* typography */
-  --type-principal: 'Outfit', sans-serif;
-  --type-secondary: 'Righteous', cursive;
-}
+@import 'variables';
 
 *,
 *::before,
@@ -129,9 +108,9 @@ svg {
 body {
   min-height: 100vh;
   font-size: 100%;
-  font-family: var(--type-principal);
-  color: var(--white);
-  background: var(--black);
+  font-family: $type-principal;
+  color: $white;
+  background: $black;
   hyphens: auto;
   font-smooth: always;
 }

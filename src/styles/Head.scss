@@ -1,3 +1,5 @@
+@import 'variables';
+
 .head__container {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,7 @@
       font-size: 3.5em;
 
       .head__title__h1__span {
-        color: var(--dark-orange);
+        color: $dark-orange;
       }
     }
 
@@ -22,15 +24,30 @@
 
   .head__button {
     cursor: pointer;
-    background: var(--grey);
-    border: .15rem solid transparent;
+    position: relative;
+    background: $grey;
+    font-size: 1.5em;
     border-radius: .3rem;
-    padding: .5rem 1.5rem;
-    transition: .2s;
+    width: 8rem;
+    height: 3rem;
+    transition: $transition-ease-in-out;
 
-    &:hover {
-      border-color: var(--dark-orange);
-      transition: .2s;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      background: $dark-orange;
+      width: inherit;
+      height: inherit;
+      border-radius: .4rem;
+      transition: $transition-ease-in-out;
+    }
+
+    &:hover::before {
+      transform: translateX(.6rem) translateY(.4rem);
+      transition: $transition-ease-in-out;
     }
   }
 }
