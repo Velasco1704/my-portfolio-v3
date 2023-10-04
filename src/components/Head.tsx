@@ -21,7 +21,7 @@ export const Head = () => {
         </h2>
       </div>
       <button className="head__button" type="button">
-        <a download="Hoja de Vida" href="../../public/hoja-de-vida.pdf">
+        <a download href="../../public/hoja-de-vida.pdf">
           My CV
         </a>
       </button>
