@@ -1,4 +1,5 @@
 import { Typewriter } from "react-simple-typewriter";
+import PDF from "../assets/hoja-de-vida.pdf";
 import "../styles/Head.scss";
 
 export const Head = () => {
@@ -21,9 +22,7 @@ export const Head = () => {
         </h2>
       </div>
       <button className="head__button" type="button">
-        <a download href="../../public/hoja-de-vida.pdf">
-          My CV
-        </a>
+        <a href={PDF}>My CV</a>
       </button>
     </div>
   );
