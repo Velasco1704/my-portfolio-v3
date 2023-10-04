@@ -219,9 +219,9 @@ export const ProjectsList = () => {
           <div className="ProjectList__info__container">
             <h3 className="ProjectsList__card__info__h3">Blog App</h3>
             <p className="ProjectsList__card__info__p">
-              : En Blog App el usuario tendrá que registrarse, después de eso
-              prodra ver los demás post de los otros usuarios, también podrá
-              crear sus propios post, editarlos y eliminarlos.
+              In Blog App the user will have to register, after that You will be
+              able to see the other posts of other users, you will also be able
+              to Create your own posts, edit them and delete them.
             </p>
           </div>
           <ul className="ProjectList__technologies">
