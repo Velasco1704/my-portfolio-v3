@@ -21,11 +21,13 @@ export const About = () => {
           <span className="about__info__h3__span">About</span> Me !
         </h3>
         <p className="about__info__p">
-          I am <span className="about__info__span">Daniel Velasco</span> dolor
-          sit amet consectetur adipisicing elit. Necessitatibus nostrum harum
-          assumenda accusamus dolorum laboriosam excepturi a eveniet nobis
-          adipisci dignissimos magnam nemo, illum exercitationem beatae
-          similique eaque eius non! Doloribus harum eum{" "}
+          Hello! <span className="about__info__span">I am Daniel</span> , a
+          Passionate frontend developer with a constant thirst for technology.
+          My approach is not only limited to writing code, but to create
+          engaging and functional experiences. I am always ready learn from
+          others, as each interaction and project presents opportunities to
+          grow. My path in development has been enriched with several personal
+          projects, where I have applied creativity and attention to detail.
         </p>
       </div>
       <div className="about__skills">

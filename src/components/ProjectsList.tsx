@@ -1,20 +1,21 @@
-import tasksImg from "../assets/tasks-image.png";
-import blogImg from "../assets/blog-image.png";
-import doctorDashboardImg from "../assets/doctor-dashboard-Image.png";
-import { BsGithub, BsEye } from "react-icons/bs";
-import { GrMysql } from "react-icons/gr";
-import { FaSass, FaNodeJs } from "react-icons/fa";
-import {
-  SiReact,
-  SiRedux,
-  SiTypescript,
-  SiFirebase,
-  SiExpress,
-  SiPrisma,
-} from "react-icons/si";
+import { useRef, useState } from "react";
+import TuGymImage from "../assets/TuGym-image.png";
+import storeImage from "../assets/store-client.png";
+import storeDashboardImage from "../assets/store-dashboard.png";
+import blogApp from "../assets/blog-app-image.png";
+import { BsGithub } from "react-icons/bs";
+import { FaLink, FaExchangeAlt } from "react-icons/fa";
 import "../styles/ProjectsList.scss";
 
 export const ProjectsList = () => {
+  const linkClientRef = useRef<HTMLSpanElement>(null);
+  const linkDashboardRef = useRef<HTMLSpanElement>(null);
+  const repoClientRef = useRef<HTMLSpanElement>(null);
+  const repoDashboardRef = useRef<HTMLSpanElement>(null);
+  const repoBackendRef = useRef<HTMLSpanElement>(null);
+
+  const [imageState, setImageState] = useState(false);
+
   return (
     <div className="ProjectsList__container">
       <h1 className="ProjectsList__h1">My Projects</h1>
@@ -22,44 +23,34 @@ export const ProjectsList = () => {
         <div className="ProjectsList__card">
           <img
             className="ProjectsList__card__img"
-            src={tasksImg}
+            src={TuGymImage}
             alt="tasksImg"
           />
           <div className="ProjectList__info__container">
-            <h3 className="ProjectsList__card__info__h3">Tasks App</h3>
+            <h3 className="ProjectsList__card__info__h3">TuGym</h3>
             <p className="ProjectsList__card__info__p">
-              This is a simple app in order to create tasks, edit them and
-              remove them. The database I used was firebase.
+              Discover a new level of well-being at TuGym! On our website, we
+              present an exciting range of subscription plans designed to fit
+              your lifestyle and fitness goals. From basic options for beginners
+              to premium plans for fitness enthusiasts, there's something for
+              everyone!
             </p>
           </div>
-          <div className="ProjectList__technologies">
-            <h4 className="ProjectList__technologies__h4">Technologies Used</h4>
-            <div className="ProjectList__container__technologies">
-              <span className="ProjectList__container__technologies__span skill-react">
-                <SiReact />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-ts">
-                <SiTypescript />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-scss">
-                <FaSass />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-firebase">
-                <SiFirebase />
-              </span>
-            </div>
-          </div>
+          <ul className="ProjectList__technologies">
+            <li className="ProjectList__technologies__li">Next JS</li>
+            <li className="ProjectList__technologies__li">Tailwind CSS</li>
+          </ul>
           <div className="ProjectList__links">
             <a
               className="ProjectList__link"
-              href="https://tasks-app-dd.netlify.app"
+              href="https://gym-idvre9c9l-velasco1704.vercel.app"
               target="_blank"
             >
-              <BsEye />
+              <FaLink />
             </a>
             <a
               className="ProjectList__link"
-              href="https://github.com/Velasco1704/tasks-app-firebase"
+              href="https://github.com/Velasco1704/gym-app"
               target="_blank"
             >
               <BsGithub />
@@ -67,145 +58,196 @@ export const ProjectsList = () => {
           </div>
         </div>
         <div className="ProjectsList__card">
+          <div className="ProjectsList__card__container__img__store">
+            <img
+              className="ProjectsList__card__img"
+              src={imageState ? storeImage : storeDashboardImage}
+              alt="tasksImg"
+            />
+            <button
+              className="ProjectsList__card__change__img__button"
+              onClick={() => setImageState(!imageState)}
+            >
+              <FaExchangeAlt />
+            </button>
+          </div>
+          <div className="ProjectList__info__container">
+            <h3 className="ProjectsList__card__info__h3">Store App</h3>
+            <p className="ProjectsList__card__info__p">
+              Store App is made up of the client part where the user can
+              purchase a wide variety of products, then there is the board for
+              the administrator who can manage the entire store such as
+              products, categories and orders.
+              <span className="ProjectsList__card__info__p__span">
+                The payment method is paypal and is fully functional
+              </span>
+            </p>
+          </div>
+          <ul className="ProjectList__technologies">
+            <li className="ProjectList__technologies__li">React TS</li>
+            <li className="ProjectList__technologies__li">Sass</li>
+            <li className="ProjectList__technologies__li">Redux</li>
+            <li className="ProjectList__technologies__li">Node TS</li>
+            <li className="ProjectList__technologies__li">Express</li>
+            <li className="ProjectList__technologies__li">Prisma</li>
+            <li className="ProjectList__technologies__li">MySql</li>
+          </ul>
+          <div className="ProjectList__links ProjectList__links__store">
+            <a
+              onMouseEnter={() =>
+                linkClientRef.current?.classList.add(
+                  "ProjectList__link__open__span"
+                )
+              }
+              onMouseLeave={() =>
+                linkClientRef.current?.classList.remove(
+                  "ProjectList__link__open__span"
+                )
+              }
+              className="ProjectList__link ProjectList__link__store"
+              href="https://my-store-client.netlify.app"
+              target="_blank"
+            >
+              <FaLink />
+              <span
+                ref={linkClientRef}
+                className="ProjectList__link__span__store"
+              >
+                Link Client
+              </span>
+            </a>
+            <a
+              onMouseEnter={() =>
+                linkDashboardRef.current?.classList.add(
+                  "ProjectList__link__open__span"
+                )
+              }
+              onMouseLeave={() =>
+                linkDashboardRef.current?.classList.remove(
+                  "ProjectList__link__open__span"
+                )
+              }
+              className="ProjectList__link ProjectList__link__store"
+              href="https://my-store-dashboard.netlify.app"
+              target="_blank"
+            >
+              <FaLink />
+              <span
+                ref={linkDashboardRef}
+                className="ProjectList__link__span__store"
+              >
+                Link Dashboard
+              </span>
+            </a>
+            <a
+              onMouseEnter={() =>
+                repoClientRef.current?.classList.add(
+                  "ProjectList__link__open__span"
+                )
+              }
+              onMouseLeave={() =>
+                repoClientRef.current?.classList.remove(
+                  "ProjectList__link__open__span"
+                )
+              }
+              className="ProjectList__link ProjectList__link__store"
+              href="https://github.com/Velasco1704/store-client"
+              target="_blank"
+            >
+              <BsGithub />
+              <span
+                ref={repoClientRef}
+                className="ProjectList__link__span__store"
+              >
+                Repo Client
+              </span>
+            </a>
+            <a
+              onMouseEnter={() =>
+                repoDashboardRef.current?.classList.add(
+                  "ProjectList__link__open__span"
+                )
+              }
+              onMouseLeave={() =>
+                repoDashboardRef.current?.classList.remove(
+                  "ProjectList__link__open__span"
+                )
+              }
+              className="ProjectList__link ProjectList__link__store"
+              href="https://github.com/Velasco1704/store-dashboard"
+              target="_blank"
+            >
+              <BsGithub />
+              <span
+                ref={repoDashboardRef}
+                className="ProjectList__link__span__store"
+              >
+                Repo Dashboard
+              </span>
+            </a>
+            <a
+              onMouseEnter={() =>
+                repoBackendRef.current?.classList.add(
+                  "ProjectList__link__open__span"
+                )
+              }
+              onMouseLeave={() =>
+                repoBackendRef.current?.classList.remove(
+                  "ProjectList__link__open__span"
+                )
+              }
+              className="ProjectList__link ProjectList__link__store"
+              href="https://github.com/Velasco1704/store-server"
+              target="_blank"
+            >
+              <BsGithub />
+              <span
+                ref={repoBackendRef}
+                className="ProjectList__link__span__store"
+              >
+                Repo Backend
+              </span>
+            </a>
+          </div>
+        </div>
+        <div className="ProjectsList__card">
           <img
             className="ProjectsList__card__img"
-            src={blogImg}
-            alt="blogImg"
+            src={blogApp}
+            alt="tasksImg"
           />
           <div className="ProjectList__info__container">
             <h3 className="ProjectsList__card__info__h3">Blog App</h3>
             <p className="ProjectsList__card__info__p">
-              This app is a blog with a full login and CRUD, each user is You
-              have to register with email and password. You can create, update
-              and delete your post, every post you make each user will be
-              reflected in the main menu. the basis of data I use was firebase.
+              : En Blog App el usuario tendrá que registrarse, después de eso
+              prodra ver los demás post de los otros usuarios, también podrá
+              crear sus propios post, editarlos y eliminarlos.
             </p>
           </div>
-          <div className="ProjectList__technologies">
-            <h4 className="ProjectList__technologies__h4">Technologies Used</h4>
-            <div className="ProjectList__container__technologies">
-              <span className="ProjectList__container__technologies__span skill-react">
-                <SiReact />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-redux">
-                <SiRedux />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-ts">
-                <SiTypescript />
-              </span>
-              <span className="ProjectList__container__technologies__span skill-scss">
-                <FaSass />
-              </span>
-              <span className="ProjectList__container__technologies__span">
-                <SiFirebase />
-              </span>
-            </div>
-          </div>
+          <ul className="ProjectList__technologies">
+            <li className="ProjectList__technologies__li">React TS</li>
+            <li className="ProjectList__technologies__li">Redux</li>
+            <li className="ProjectList__technologies__li">Sass</li>
+            <li className="ProjectList__technologies__li">Node TS</li>
+            <li className="ProjectList__technologies__li">Express</li>
+            <li className="ProjectList__technologies__li">Prisma</li>
+            <li className="ProjectList__technologies__li">MySql</li>
+          </ul>
           <div className="ProjectList__links">
             <a
               className="ProjectList__link"
-              href="https://mi-blog-dv.netlify.app"
+              href="https://blog-app-dv.netlify.app"
               target="_blank"
             >
-              <BsEye />
+              <FaLink />
             </a>
             <a
               className="ProjectList__link"
-              href="https://github.com/Velasco1704/-mi-blog-firebase-redux-ts-"
+              href="https://github.com/Velasco1704/blog-app-client"
               target="_blank"
             >
               <BsGithub />
             </a>
-          </div>
-        </div>
-        <div className="ProjectsList__card">
-          <img
-            className="ProjectsList__card__img"
-            src={doctorDashboardImg}
-            alt="DoctorDashboardImg"
-          />
-          <div className="ProjectList__info__container">
-            <h3 className="ProjectsList__card__info__h3">
-              Doctor Dashboard App
-            </h3>
-            <p className="ProjectsList__card__info__p">
-              This app is a patient control panel, each Doctor has to create
-              your profile with email and password and other information of the
-              Doctor. You will be able to create your patient's profile and you
-              can also update or delete, each patient you create will be seen in
-              the menu major. The database that i used is based on NodeJs,
-              Express and use MySql with an ORM(Prisma).
-            </p>
-          </div>
-          <div className="ProjectList__technologies">
-            <h4 className="ProjectList__technologies__h4">Technologies Used</h4>
-            <div className="ProjectList__container__technologies">
-              <div className="ProjectList__technology">
-                <h4 className="ProjectList__technology__h4">Frontend</h4>
-                <div className="ProjectList__container__technology">
-                  <span className="ProjectList__container__technologies__span skill-react">
-                    <SiReact />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-redux">
-                    <SiRedux />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-ts">
-                    <SiTypescript />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-scss">
-                    <FaSass />
-                  </span>
-                </div>
-              </div>
-              <div className="ProjectList__technology">
-                <h4 className="ProjectList__technology__h4">Backend</h4>
-                <div className="ProjectList__container__technology">
-                  <span className="ProjectList__container__technologies__span skill-nodejs">
-                    <FaNodeJs />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-express">
-                    <SiExpress />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-prisma">
-                    <SiPrisma />
-                  </span>
-                  <span className="ProjectList__container__technologies__span skill-mySql">
-                    <GrMysql />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="ProjectList__links">
-            <a
-              className="ProjectList__link"
-              href="https://doctor-dashboard-app.netlify.app"
-              target="_blank"
-            >
-              <BsEye />
-            </a>
-            <div className="ProjectList__container__links">
-              <a
-                className="ProjectList__link-frontend"
-                href="https://github.com/Velasco1704/app-doctor-client"
-                target="_blank"
-              >
-                F.Code{" "}
-                <span className="ProjectList__link__span-frontend">
-                  <BsGithub />
-                </span>
-              </a>
-              <a
-                className="ProjectList__link-backend"
-                href="https://github.com/Velasco1704/app-doctor-server"
-                target="_blank"
-              >
-                B.Code{" "}
-                <span className="ProjectList__link__span-backend">
-                  <BsGithub />
-                </span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
