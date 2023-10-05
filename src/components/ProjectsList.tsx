@@ -38,7 +38,7 @@ export const ProjectsList = () => {
           </div>
           <ul className="ProjectList__technologies">
             <li className="ProjectList__technologies__li">Next JS</li>
-            <li className="ProjectList__technologies__li">Tailwind CSS</li>
+            <li className="ProjectList__technologies__li">Sass</li>
           </ul>
           <div className="ProjectList__links">
             <a
